@@ -17,7 +17,7 @@ Use this [vRealize Operations](https://www.vmware.com/products/vrealize-operatio
 ## Installation
 1. Import the super metric at `Administration` / `Configuration` / `Super Metrics` / `Import Super Metric`  
 ![Import View](https://raw.githubusercontent.com/notoriousbdg/vrops-dashboard-rightsizing_details/master/Import_Super_Metric.png)
-2. Click `Browse...` then select the file named [SuperMetrics.json](https://github.com/notoriousbdg/vrops-dashboard-rightsizing_details/raw/master/SuperMetrics.json)
+2. Click `Browse...` then select the file named [SuperMetrics.json](https://raw.githubusercontent.com/notoriousbdg/vrops-dashboard-rightsizing_details/master/Supermetrics.json)
 3. Edit the Policy at `Administration` / `Policies` / `Policy Library`.  The policy should be `vSphere Solution's Default Policy (DATE)` unless a new policy was explicitly created.  
 ![Policy Library](https://raw.githubusercontent.com/notoriousbdg/vrops-dashboard-rightsizing_details/master/Policy_Library.png)
 4. Enable Super Metrics that start with `Super Metric|Rightsize - Potential` for Virtual Machine objects only.
