@@ -20,7 +20,7 @@ Use this [vRealize Operations](https://www.vmware.com/products/vrealize-operatio
 2. Click `Browse...` then select the file named [SuperMetrics.json](https://github.com/notoriousbdg/vrops-dashboard-rightsizing_details/raw/master/SuperMetrics.json)
 3. Edit the Policy at `Administration` / `Policies` / `Policy Library`.  The policy should be `vSphere Solution's Default Policy (DATE)` unless a new policy was explicitly created.  
 ![Policy Library](https://raw.githubusercontent.com/notoriousbdg/vrops-dashboard-rightsizing_details/master/Policy_Library.png)
-4. Enable `Super Metric|VMs Remaining (Average VM Size)` Super Metric on Virtual Machine objects only.
+4. Enable Super Metrics that start with `Super Metric|Rightsize - Potential` for Virtual Machine objects only.
 ![Policy Metrics](https://raw.githubusercontent.com/notoriousbdg/vrops-dashboard-rightsizing_details/master/Policy_Metrics.png)
 5. Import the view at `Dashboards` / `Views` / `Import...`  
 ![Import View](https://raw.githubusercontent.com/notoriousbdg/vrops-dashboard-rightsizing_details/master/Import_View.png)
