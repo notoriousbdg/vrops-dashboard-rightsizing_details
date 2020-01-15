@@ -1,8 +1,8 @@
 
-# Rightsizing Details Dashboard for vRealize Operations 8.0
+# VM Rightsizing Details Dashboard for vRealize Operations 8.0
 ---------
 
-Use this [vRealize Operations](https://www.vmware.com/products/vrealize-operations.html) dashboard to expore rightsizing recommendations.  This dashboard will help answer these questions.
+Use this [vRealize Operations](https://www.vmware.com/products/vrealize-operations.html) dashboard to expore rightsizing recommendations.  This dashboard will help answer these questions.  
 
 * How does vROps determine the recommended size for a VM?
 * Which VMs are oversized?
@@ -10,6 +10,8 @@ Use this [vRealize Operations](https://www.vmware.com/products/vrealize-operatio
 * How do I justify the recommendation to the VM owner?
 * What is the potential change to capacity if the VMs are rightsized?
 * What is the potential change to VM cost if the VMs are rightsized?
+
+More detailed description of Rightsizing with vRealize Operations is available [here](http://blogs.vmware.com/management/2020/01/rightsizing-vms-with-vrealize-operations.html).
 
 ## Dashboard
 ![Dashboard](https://raw.githubusercontent.com/notoriousbdg/vrops-dashboard-rightsizing_details/master/Dashboard.png)
