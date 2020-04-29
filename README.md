@@ -104,7 +104,7 @@ Please open an [issue](https://github.com/notoriousbdg/vrops-dashboard-rightsizi
 2020-01-14
 * Initial release
 
-2020-01-14
+2020-01-15
 * Update readme
 
 2020-04-29
