@@ -45,8 +45,8 @@ More detailed description of Rightsizing with vRealize Operations is available [
 |--|--|--|
 | Rightsizing - Conservative | Rightsizing - Conservative | Image |
 | Rightsizing - Aggressive | Rightsizing - Aggressive | Image |
-| Oversized Virtual Machine Details | 2A. Select an Oversized VM | List |
-| Undersized Virtual Machine Details | 2B. Select an Undersized VM | List |
+| Undersized Virtual Machine Details | 2A. Select an Undersized VM | List |
+| Oversized Virtual Machine Details | 2B. Select an Oversized VM | List |
 | Recommended Size - CPU | 3. Compare CPU Recommended Size to Historical Utilization | Trend |
 | Recommended Size - Memory | 4. Compare Memory Recommended Size to Historical Utilization | Trend |
 | CPU Queue Trend with Total Capacity | 5. Compare CPU Queue to Total Capacity | Trend |
