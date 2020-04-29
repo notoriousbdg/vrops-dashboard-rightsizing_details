@@ -1,1 +1,266 @@
-{"89cd8f91-2bd0-417e-8e2c-c4eeb2200f65":{"resourceKinds":[{"resourceKindKey":"VirtualMachine","adapterKindKey":"VMWARE"}],"modificationTime":1578523802572,"name":"Rightsize - Potential Cost Increase","formula":"( max( ${adaptertype=VMWARE, objecttype=ClusterComputeResource, metric=cost|allocation|allocationBasedCpuBaseRate, depth=-2} ) > 0 ? ${this, metric=summary|undersized|vcpus} * max( ${adaptertype=VMWARE, objecttype=ClusterComputeResource, metric=cost|allocation|allocationBasedCpuBaseRate, depth=-2} ) : ${this, metric=Super Metric|sm_f969e72d-7775-44d7-973a-c92319fcd08b} * max( ${adaptertype=VMWARE, objecttype=ClusterComputeResource, metric=cost|cpuBaseRate, depth=-2} ) ) + ( max( ${adaptertype=VMWARE, objecttype=ClusterComputeResource, metric=cost|allocation|allocationBasedMemoryBaseRate, depth=-2} ) > 0 ? ( ${this, metric=summary|undersized|memory}/1024/1024 ) * max( ${adaptertype=VMWARE, objecttype=ClusterComputeResource, metric=cost|allocation|allocationBasedMemoryBaseRate, depth=-2} ) : ${this, metric=Super Metric|sm_bac94c64-ebd3-40a6-992e-7fd1b4d480b4} * max( ${adaptertype=VMWARE, objecttype=ClusterComputeResource, metric=cost|memoryBaseRate, depth=-2} ) )","description":""},"c7b28474-211e-4173-8d55-d283ce26f764":{"resourceKinds":[{"resourceKindKey":"VirtualMachine","adapterKindKey":"VMWARE"}],"modificationTime":1578518543374,"name":"Rightsize - Potential Memory Consumed Reclaimable (GB)","formula":"((${this, metric=mem|consumed_average} - (${this, metric=config|hardware|memoryKB} - ${this, metric=summary|oversized|memory})) > 0 ? (${this, metric=mem|consumed_average} - (${this, metric=config|hardware|memoryKB} - ${this, metric=summary|oversized|memory})) : 0)/1024/1024","description":""},"ab378c76-0dce-4c09-ad8d-1c9ff8540882":{"resourceKinds":[{"resourceKindKey":"VirtualMachine","adapterKindKey":"VMWARE"}],"modificationTime":1578518525751,"name":"Rightsize - Potential CPU Usage Reclaimable (GHz)","formula":"0","description":""},"bac94c64-ebd3-40a6-992e-7fd1b4d480b4":{"resourceKinds":[{"resourceKindKey":"VirtualMachine","adapterKindKey":"VMWARE"}],"modificationTime":1578518656319,"name":"Rightsize - Potential Memory Consumed Increase (GB)","formula":"(${this, metric=summary|undersized} ? ${this, metric=summary|undersized|memory} : 0)/1024/1024","description":""},"0e3d6099-d2a3-49b4-8c65-b84aea91e0e7":{"resourceKinds":[{"resourceKindKey":"VirtualMachine","adapterKindKey":"VMWARE"}],"modificationTime":1578523608678,"name":"Rightsize - Potential Cost Savings","formula":"( max( ${adaptertype=VMWARE, objecttype=ClusterComputeResource, metric=cost|allocation|allocationBasedCpuBaseRate, depth=-2} ) > 0 ? ${this, metric=summary|oversized|vcpus} * max( ${adaptertype=VMWARE, objecttype=ClusterComputeResource, metric=cost|allocation|allocationBasedCpuBaseRate, depth=-2} ) : ${this, metric=Super Metric|sm_ab378c76-0dce-4c09-ad8d-1c9ff8540882} * max( ${adaptertype=VMWARE, objecttype=ClusterComputeResource, metric=cost|cpuBaseRate, depth=-2} ) ) + ( max( ${adaptertype=VMWARE, objecttype=ClusterComputeResource, metric=cost|allocation|allocationBasedMemoryBaseRate, depth=-2} ) > 0 ? ( ${this, metric=summary|oversized|memory}/1024/1024 ) * max( ${adaptertype=VMWARE, objecttype=ClusterComputeResource, metric=cost|allocation|allocationBasedMemoryBaseRate, depth=-2} ) : ${this, metric=Super Metric|sm_c7b28474-211e-4173-8d55-d283ce26f764} * max( ${adaptertype=VMWARE, objecttype=ClusterComputeResource, metric=cost|memoryBaseRate, depth=-2} ) )","description":""},"f969e72d-7775-44d7-973a-c92319fcd08b":{"resourceKinds":[{"resourceKindKey":"VirtualMachine","adapterKindKey":"VMWARE"}],"modificationTime":1578519843086,"name":"Rightsize - Potential CPU Usage Increase (GHz)","formula":"(${this, metric=summary|undersized} && ${this, metric=cpu|demandmhz} > ${this, metric=cpu|usagemhz_average}) ? (${this, metric=cpu|demandmhz} - ${this, metric=cpu|usagemhz_average}) / 1000 : 0","description":""}}
+{
+  "ea9d7500-8703-453a-9d42-cdccf5b52461": {
+    "resourceKinds": [
+      {
+        "resourceKindKey": "CustomDatacenter",
+        "adapterKindKey": "VMWARE"
+      },
+      {
+        "resourceKindKey": "ClusterComputeResource",
+        "adapterKindKey": "VMWARE"
+      },
+      {
+        "resourceKindKey": "vSphere World",
+        "adapterKindKey": "VMWARE"
+      },
+      {
+        "resourceKindKey": "Datacenter",
+        "adapterKindKey": "VMWARE"
+      }
+    ],
+    "modificationTime": 1588082133958,
+    "name": "Rightsize - Memory to Add to Undersized VMs",
+    "formula": "sum(${adaptertype=VMWARE, objecttype=VirtualMachine, metric=summary|undersized|memory, depth=10})/1024/1024",
+    "description": "",
+    "unitId": "gb",
+    "modifiedBy": "6df558f7-25df-4222-96b9-ade784399d19"
+  },
+  "89cd8f91-2bd0-417e-8e2c-c4eeb2200f65": {
+    "resourceKinds": [
+      {
+        "resourceKindKey": "VirtualMachine",
+        "adapterKindKey": "VMWARE"
+      }
+    ],
+    "modificationTime": 1586917789467,
+    "name": "Rightsize - Potential Cost Increase",
+    "formula": "( max( ${adaptertype=VMWARE, objecttype=ClusterComputeResource, metric=cost|allocation|allocationBasedCpuBaseRate, depth=-2} ) > 0 ? ${this, metric=summary|undersized|vcpus} * max( ${adaptertype=VMWARE, objecttype=ClusterComputeResource, metric=cost|allocation|allocationBasedCpuBaseRate, depth=-2} ) : ${this, metric=Super Metric|sm_f969e72d-7775-44d7-973a-c92319fcd08b} * max( ${adaptertype=VMWARE, objecttype=ClusterComputeResource, metric=cost|cpuBaseRate, depth=-2} ) ) + ( max( ${adaptertype=VMWARE, objecttype=ClusterComputeResource, metric=cost|allocation|allocationBasedMemoryBaseRate, depth=-2} ) > 0 ? ( ${this, metric=summary|undersized|memory}/1024/1024 ) * max( ${adaptertype=VMWARE, objecttype=ClusterComputeResource, metric=cost|allocation|allocationBasedMemoryBaseRate, depth=-2} ) : ${this, metric=Super Metric|sm_bac94c64-ebd3-40a6-992e-7fd1b4d480b4} * max( ${adaptertype=VMWARE, objecttype=ClusterComputeResource, metric=cost|memoryBaseRate, depth=-2} ) )",
+    "description": "",
+    "unitId": "currencymonth",
+    "modifiedBy": "6df558f7-25df-4222-96b9-ade784399d19"
+  },
+  "3cc4d662-692d-4885-934f-5b8760a561f8": {
+    "resourceKinds": [
+      {
+        "resourceKindKey": "CustomDatacenter",
+        "adapterKindKey": "VMWARE"
+      },
+      {
+        "resourceKindKey": "ClusterComputeResource",
+        "adapterKindKey": "VMWARE"
+      },
+      {
+        "resourceKindKey": "vSphere World",
+        "adapterKindKey": "VMWARE"
+      },
+      {
+        "resourceKindKey": "Datacenter",
+        "adapterKindKey": "VMWARE"
+      }
+    ],
+    "modificationTime": 1587652784850,
+    "name": "Rightsize - Potential Cost Savings Total",
+    "formula": "sum(${adaptertype=VMWARE, objecttype=VirtualMachine, metric=Super Metric|sm_0e3d6099-d2a3-49b4-8c65-b84aea91e0e7, depth=10})",
+    "description": "",
+    "unitId": "currencymonth",
+    "modifiedBy": "6df558f7-25df-4222-96b9-ade784399d19"
+  },
+  "c7b28474-211e-4173-8d55-d283ce26f764": {
+    "resourceKinds": [
+      {
+        "resourceKindKey": "VirtualMachine",
+        "adapterKindKey": "VMWARE"
+      }
+    ],
+    "modificationTime": 1588052060985,
+    "name": "Rightsize - Potential Memory Consumed Reclaimable (GB)",
+    "formula": "${this, metric=summary|oversized} && ${this, metric=mem|consumed_average} > ${this, metric=config|hardware|memoryKB} - ${this, metric=summary|oversized|memory} ? (${this, metric=mem|consumed_average} - (${this, metric=config|hardware|memoryKB} - ${this, metric=summary|oversized|memory}))/1024/1024 : 0",
+    "description": "",
+    "unitId": "gb",
+    "modifiedBy": "6df558f7-25df-4222-96b9-ade784399d19"
+  },
+  "f72369a3-5145-45e8-9242-1742d6ac96d2": {
+    "resourceKinds": [
+      {
+        "resourceKindKey": "CustomDatacenter",
+        "adapterKindKey": "VMWARE"
+      },
+      {
+        "resourceKindKey": "ClusterComputeResource",
+        "adapterKindKey": "VMWARE"
+      },
+      {
+        "resourceKindKey": "vSphere World",
+        "adapterKindKey": "VMWARE"
+      },
+      {
+        "resourceKindKey": "Datacenter",
+        "adapterKindKey": "VMWARE"
+      }
+    ],
+    "modificationTime": 1588082243978,
+    "name": "Rightsize - Memory to Remove from Oversized VMs",
+    "formula": "sum(${adaptertype=VMWARE, objecttype=VirtualMachine, metric=summary|oversized|memory, depth=10})/1024/1024",
+    "description": "",
+    "unitId": "gb",
+    "modifiedBy": "6df558f7-25df-4222-96b9-ade784399d19"
+  },
+  "e00bac67-9a22-4276-8e47-546daf71072f": {
+    "resourceKinds": [
+      {
+        "resourceKindKey": "CustomDatacenter",
+        "adapterKindKey": "VMWARE"
+      },
+      {
+        "resourceKindKey": "ClusterComputeResource",
+        "adapterKindKey": "VMWARE"
+      },
+      {
+        "resourceKindKey": "vSphere World",
+        "adapterKindKey": "VMWARE"
+      },
+      {
+        "resourceKindKey": "Datacenter",
+        "adapterKindKey": "VMWARE"
+      }
+    ],
+    "modificationTime": 1588082320003,
+    "name": "Rightsize - vCPUs to Remove from Oversized VMs",
+    "formula": "sum(${adaptertype=VMWARE, objecttype=VirtualMachine, metric=summary|oversized|vcpus, depth=10})",
+    "description": "",
+    "unitId": "",
+    "modifiedBy": "6df558f7-25df-4222-96b9-ade784399d19"
+  },
+  "ab378c76-0dce-4c09-ad8d-1c9ff8540882": {
+    "resourceKinds": [
+      {
+        "resourceKindKey": "VirtualMachine",
+        "adapterKindKey": "VMWARE"
+      }
+    ],
+    "modificationTime": 1586918009852,
+    "name": "Rightsize - Potential CPU Usage Reclaimable (GHz)",
+    "formula": "0",
+    "description": "",
+    "unitId": "ghz",
+    "modifiedBy": "6df558f7-25df-4222-96b9-ade784399d19"
+  },
+  "bac94c64-ebd3-40a6-992e-7fd1b4d480b4": {
+    "resourceKinds": [
+      {
+        "resourceKindKey": "VirtualMachine",
+        "adapterKindKey": "VMWARE"
+      }
+    ],
+    "modificationTime": 1586918038770,
+    "name": "Rightsize - Potential Memory Consumed Increase (GB)",
+    "formula": "(${this, metric=summary|undersized} ? ${this, metric=summary|undersized|memory} : 0)/1024/1024",
+    "description": "",
+    "unitId": "gb",
+    "modifiedBy": "6df558f7-25df-4222-96b9-ade784399d19"
+  },
+  "06488d0c-07b4-4680-99e9-a5f15259c9c2": {
+    "resourceKinds": [
+      {
+        "resourceKindKey": "CustomDatacenter",
+        "adapterKindKey": "VMWARE"
+      },
+      {
+        "resourceKindKey": "ClusterComputeResource",
+        "adapterKindKey": "VMWARE"
+      },
+      {
+        "resourceKindKey": "vSphere World",
+        "adapterKindKey": "VMWARE"
+      },
+      {
+        "resourceKindKey": "Datacenter",
+        "adapterKindKey": "VMWARE"
+      }
+    ],
+    "modificationTime": 1587652984376,
+    "name": "Rightsize - Potential Cost Increase Total",
+    "formula": "sum(${adaptertype=VMWARE, objecttype=VirtualMachine, metric=Super Metric|sm_89cd8f91-2bd0-417e-8e2c-c4eeb2200f65, depth=10})",
+    "description": "",
+    "unitId": "currencymonth",
+    "modifiedBy": "6df558f7-25df-4222-96b9-ade784399d19"
+  },
+  "0e3d6099-d2a3-49b4-8c65-b84aea91e0e7": {
+    "resourceKinds": [
+      {
+        "resourceKindKey": "VirtualMachine",
+        "adapterKindKey": "VMWARE"
+      }
+    ],
+    "modificationTime": 1586917935185,
+    "name": "Rightsize - Potential Cost Savings",
+    "formula": "( max( ${adaptertype=VMWARE, objecttype=ClusterComputeResource, metric=cost|allocation|allocationBasedCpuBaseRate, depth=-2} ) > 0 ? ${this, metric=summary|oversized|vcpus} * max( ${adaptertype=VMWARE, objecttype=ClusterComputeResource, metric=cost|allocation|allocationBasedCpuBaseRate, depth=-2} ) : ${this, metric=Super Metric|sm_ab378c76-0dce-4c09-ad8d-1c9ff8540882} * max( ${adaptertype=VMWARE, objecttype=ClusterComputeResource, metric=cost|cpuBaseRate, depth=-2} ) ) + ( max( ${adaptertype=VMWARE, objecttype=ClusterComputeResource, metric=cost|allocation|allocationBasedMemoryBaseRate, depth=-2} ) > 0 ? ( ${this, metric=summary|oversized|memory}/1024/1024 ) * max( ${adaptertype=VMWARE, objecttype=ClusterComputeResource, metric=cost|allocation|allocationBasedMemoryBaseRate, depth=-2} ) : ${this, metric=Super Metric|sm_c7b28474-211e-4173-8d55-d283ce26f764} * max( ${adaptertype=VMWARE, objecttype=ClusterComputeResource, metric=cost|memoryBaseRate, depth=-2} ) )",
+    "description": "",
+    "unitId": "currencymonth",
+    "modifiedBy": "6df558f7-25df-4222-96b9-ade784399d19"
+  },
+  "f969e72d-7775-44d7-973a-c92319fcd08b": {
+    "resourceKinds": [
+      {
+        "resourceKindKey": "VirtualMachine",
+        "adapterKindKey": "VMWARE"
+      }
+    ],
+    "modificationTime": 1586917978755,
+    "name": "Rightsize - Potential CPU Usage Increase (GHz)",
+    "formula": "(${this, metric=summary|undersized} && ${this, metric=cpu|demandmhz} > ${this, metric=cpu|usagemhz_average}) ? (${this, metric=cpu|demandmhz} - ${this, metric=cpu|usagemhz_average}) / 1000 : 0",
+    "description": "",
+    "unitId": "ghz",
+    "modifiedBy": "6df558f7-25df-4222-96b9-ade784399d19"
+  },
+  "49855c83-3744-438f-8fbc-954c87497649": {
+    "resourceKinds": [
+      {
+        "resourceKindKey": "CustomDatacenter",
+        "adapterKindKey": "VMWARE"
+      },
+      {
+        "resourceKindKey": "ClusterComputeResource",
+        "adapterKindKey": "VMWARE"
+      },
+      {
+        "resourceKindKey": "vSphere World",
+        "adapterKindKey": "VMWARE"
+      },
+      {
+        "resourceKindKey": "Datacenter",
+        "adapterKindKey": "VMWARE"
+      }
+    ],
+    "modificationTime": 1588082019452,
+    "name": "Rightsize - vCPUs to Add to Undersized VMs",
+    "formula": "sum(${adaptertype=VMWARE, objecttype=VirtualMachine, metric=summary|undersized|vcpus, depth=10})",
+    "description": "",
+    "unitId": "",
+    "modifiedBy": "6df558f7-25df-4222-96b9-ade784399d19"
+  },
+  "740a9494-6935-4e88-aa93-1dea711db0b8": {
+    "resourceKinds": [
+      {
+        "resourceKindKey": "VirtualMachine",
+        "adapterKindKey": "VMWARE"
+      }
+    ],
+    "modificationTime": 1585332133316,
+    "name": "CPU Queue Total Capacity",
+    "formula": "${this, metric=config|hardware|num_Cpu} * 2",
+    "description": ""
+  },
+  "f2f5ddb2-9050-4afb-ad15-d90c722e2e8b": {
+    "resourceKinds": [
+      {
+        "resourceKindKey": "VirtualMachine",
+        "adapterKindKey": "VMWARE"
+      }
+    ],
+    "modificationTime": 1585332167796,
+    "name": "Context Swap Rate Total Capacity",
+    "formula": "${this, metric=config|hardware|num_Cpu} * 15000",
+    "description": ""
+  }
+}
