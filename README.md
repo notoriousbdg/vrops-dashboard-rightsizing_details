@@ -108,8 +108,10 @@ Please open an [issue](https://github.com/notoriousbdg/vrops-dashboard-rightsizi
 * Update readme
 
 2020-04-29
+* Fixed URLs in readme
 * Added summary rollup metrics for cluster, datacenter, custom datacenter, and vSphere World
 * Added CPU Queue view
 * Added Context Switch Rate view
 * Added Guest Memory Paging view
 * Added 90th Percentile views
+* Added VM Properties widgets
