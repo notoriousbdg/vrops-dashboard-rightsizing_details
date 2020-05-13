@@ -60,14 +60,6 @@ More detailed description of Rightsizing with vRealize Operations is available [
 ## Super Metrics
 | Object Type | Super Metric Name |
 |--|--|
-| Rightsize - Potential Cost Increase | Virtual Machine |
-| Rightsize - Memory to Remove from Oversized VMs | Virtual Machine |
-| Rightsize - vCPUs to Remove from Oversized VMs | Virtual Machine |
-| Rightsize - Potential CPU Usage Reclaimable (GHz) | Virtual Machine |
-| Rightsize - Potential CPU Usage Increase (GHz) | Virtual Machine |
-| Rightsize - Potential Memory Consumed Reclaimable (GB) | Virtual Machine |
-| Rightsize - Potential Memory Consumed Increase (GB) | Virtual Machine |
-| Rightsize - Potential Cost Savings | Virtual Machine |
 | CPU Queue Total Capacity | Virtual Machine |
 | Context Swap Rate Total Capacity | Virtual Machine |
 | Rightsize - Memory to Add to Undersized VMs | Cluster Compute Resource |
@@ -78,6 +70,20 @@ More detailed description of Rightsizing with vRealize Operations is available [
 | Rightsize - Memory to Remove from Oversized VMs | Custom Datacenter |
 | Rightsize - Memory to Remove from Oversized VMs | Datacenter |
 | Rightsize - Memory to Remove from Oversized VMs | vSphere World |
+| Rightsize - Potential Cost Increase | Virtual Machine |
+| Rightsize - Potential Cost Increase Total | Cluster Compute Resource |
+| Rightsize - Potential Cost Increase Total | Custom Datacenter |
+| Rightsize - Potential Cost Increase Total | Datacenter |
+| Rightsize - Potential Cost Increase Total | vSphere World |
+| Rightsize - Potential Cost Savings | Virtual Machine |
+| Rightsize - Potential Cost Savings Total | Cluster Compute Resource |
+| Rightsize - Potential Cost Savings Total | Custom Datacenter |
+| Rightsize - Potential Cost Savings Total | Datacenter |
+| Rightsize - Potential Cost Savings Total | vSphere World |
+| Rightsize - Potential CPU Usage Increase (GHz) | Virtual Machine |
+| Rightsize - Potential CPU Usage Reclaimable (GHz) | Virtual Machine |
+| Rightsize - Potential Memory Consumed Increase (GB) | Virtual Machine |
+| Rightsize - Potential Memory Consumed Reclaimable (GB) | Virtual Machine |
 | Rightsize - vCPUs to Add to Undersized VMs | Cluster Compute Resource |
 | Rightsize - vCPUs to Add to Undersized VMs | Custom Datacenter |
 | Rightsize - vCPUs to Add to Undersized VMs | Datacenter |
@@ -86,14 +92,6 @@ More detailed description of Rightsizing with vRealize Operations is available [
 | Rightsize - vCPUs to Remove from Oversized VMs | Custom Datacenter |
 | Rightsize - vCPUs to Remove from Oversized VMs | Datacenter |
 | Rightsize - vCPUs to Remove from Oversized VMs | vSphere World |
-| Rightsize - Potential Cost Savings Total | Cluster Compute Resource |
-| Rightsize - Potential Cost Savings Total | Custom Datacenter |
-| Rightsize - Potential Cost Savings Total | Datacenter |
-| Rightsize - Potential Cost Savings Total | vSphere World |
-| Rightsize - Potential Cost Increase Total | Cluster Compute Resource |
-| Rightsize - Potential Cost Increase Total | Custom Datacenter |
-| Rightsize - Potential Cost Increase Total | Datacenter |
-| Rightsize - Potential Cost Increase Total | vSphere World |
 
 ## Support
 
@@ -119,3 +117,4 @@ Please open an [issue](https://github.com/notoriousbdg/vrops-dashboard-rightsizi
 
 2020-05-13
 * Update readme
+* Removed Rightsize - Memory to Remove from Oversized VMs and Rightsize - vCPUs to Remove from Oversized VMs super metrics for Virtual Machine objects
