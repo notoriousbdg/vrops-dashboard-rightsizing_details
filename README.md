@@ -14,26 +14,27 @@ Use this [vRealize Operations](https://www.vmware.com/products/vrealize-operatio
 More detailed description of Rightsizing with vRealize Operations is available [here](http://blogs.vmware.com/management/2020/01/rightsizing-vms-with-vrealize-operations.html).
 
 ## Dashboard
-![Dashboard](https://raw.githubusercontent.com/notoriousbdg/vrops-dashboard-rightsizing_details/master/Dashboard.png)
+![Dashboard](https://raw.githubusercontent.com/notoriousbdg/vrops-dashboard-rightsizing_details/master/images/Dashboard.png)
 
 ## Installation
-1. Import the super metric at `Administration` / `Configuration` / `Super Metrics` / `Import Super Metric`  
-![Import View](https://raw.githubusercontent.com/notoriousbdg/vrops-dashboard-rightsizing_details/master/Import_Super_Metric.png)
-2. Click `Browse...` then select the file named [SuperMetrics.json](https://raw.githubusercontent.com/notoriousbdg/vrops-dashboard-rightsizing_details/master/Supermetrics.json)
-3. Edit the Policy at `Administration` / `Policies` / `Policy Library`.  The policy should be `vSphere Solution's Default Policy (DATE)` unless a new policy was explicitly created.  
-![Policy Library](https://raw.githubusercontent.com/notoriousbdg/vrops-dashboard-rightsizing_details/master/Policy_Library.png)
-4. Enable the Super Metrics for the specified object types.  Do not enable the super metric for `All Object Types`.  The list of super metrics and object types are listed in the [Super Metrics section](#Super-Metrics).  
-![Policy Metrics](https://raw.githubusercontent.com/notoriousbdg/vrops-dashboard-rightsizing_details/master/Policy_Metrics.png)
-5. Import the view at `Dashboards` / `Views` / `Import...`  
-![Import View](https://raw.githubusercontent.com/notoriousbdg/vrops-dashboard-rightsizing_details/master/Import_View.png)
-6. Click `Browse...` then select the file named [Views.zip](https://github.com/notoriousbdg/vrops-dashboard-rightsizing_details/raw/master/Views.zip)
-7. The included views are listed in the [Views section](#Views)
-8. Import the dashboard at `Dashboards` / `Actions` / `Manage Dashboards` / `Import Dashboards`  
-![Import Dashboard](https://raw.githubusercontent.com/notoriousbdg/vrops-dashboard-rightsizing_details/master/Import_Dashboard.png)
-9. Click `Browse...` then select the file named [Dashboard.zip](https://github.com/notoriousbdg/vrops-dashboard-rightsizing_details/raw/master/Dashboard.zip)
-10. The dashboard should now be available in in the dashboard list  
-![Dashboard List](https://raw.githubusercontent.com/notoriousbdg/vrops-dashboard-rightsizing_details/master/Dashboard_List.png)
-11. The included dashboards are listed in the [Dashboards section](#Dashboards)
+1. Import the super metrics at `Administration` / `Configuration` / `Super Metrics` / `Import Super Metric`  
+![Import Super Metric](https://raw.githubusercontent.com/notoriousbdg/vrops-dashboard-rightsizing_details/master/images/Supermetric_Import.png)
+2. Click `Browse...` then select the file named [supermetric.json](https://raw.githubusercontent.com/notoriousbdg/vrops-dashboard-rightsizing_details/master/supermetric.json)
+3. For each Super Metric listed in the [Super Metrics section](#Super-Metrics), click on the vertical kebab and select edit.  
+![Policy Metrics](https://raw.githubusercontent.com/notoriousbdg/vrops-dashboard-rightsizing_details/master/images/Supermetric_Edit.png)
+4. Enable the Super Metric for each Policy shown in the `Enable in a Policy` stage of the wizard.
+![Policy Library](https://raw.githubusercontent.com/notoriousbdg/vrops-dashboard-rightsizing_details/master/images/Supermetric_Policy.png)
+5. Repeat the previous 2 steps for the remaining Super Metrics listed in the [Super Metrics section](#Super-Metrics).
+6. Import the view at `Dashboards` / `Views` / `Import...`  
+![Import View](https://raw.githubusercontent.com/notoriousbdg/vrops-dashboard-rightsizing_details/master/images/View_Import.png)
+7. Click `Browse...` then select the file named [Views.zip](https://github.com/notoriousbdg/vrops-dashboard-rightsizing_details/raw/master/Views.zip)
+8. The included views are listed in the [Views section](#Views)
+9. Import the dashboard at `Dashboards` / `Actions` / `Manage Dashboards` / `Import Dashboards`  
+![Import Dashboard](https://raw.githubusercontent.com/notoriousbdg/vrops-dashboard-rightsizing_details/master/images/Dashboard_Import.png)
+10. Click `Browse...` then select the file named [Dashboard.zip](https://github.com/notoriousbdg/vrops-dashboard-rightsizing_details/raw/master/Dashboard.zip)
+11. The dashboard should now be available in in the dashboard list  
+![Dashboard List](https://raw.githubusercontent.com/notoriousbdg/vrops-dashboard-rightsizing_details/master/images/Dashboard_List.png)
+12. The included dashboards are listed in the [Dashboards section](#Dashboards)
 
 ## Dashboards
 | Dashboard Name | Dashboard Path |
@@ -115,3 +116,6 @@ Please open an [issue](https://github.com/notoriousbdg/vrops-dashboard-rightsizi
 * Added Guest Memory Paging view
 * Added 90th Percentile views
 * Added VM Properties widgets
+
+2020-05-13
+* Update readme
