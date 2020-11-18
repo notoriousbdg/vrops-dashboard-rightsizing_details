@@ -19,7 +19,7 @@ More detailed description of Rightsizing with vRealize Operations is available [
 ## Installation
 1. Import the super metrics at `Administration` / `Configuration` / `Super Metrics` / `Import Super Metric`  
 ![Import Super Metric](https://raw.githubusercontent.com/notoriousbdg/vrops-dashboard-rightsizing_details/master/images/Supermetric_Import.png)
-2. Click `Browse...` then select the file named [supermetric.json](https://raw.githubusercontent.com/notoriousbdg/vrops-dashboard-rightsizing_details/master/Supermetrics.json)
+2. Click `Browse...` then select the file named [Supermetrics.json](https://raw.githubusercontent.com/notoriousbdg/vrops-dashboard-rightsizing_details/master/Supermetrics.json)
 3. For each Super Metric listed in the [Super Metrics section](#Super-Metrics), click on the vertical kebab and select edit.  
 ![Policy Metrics](https://raw.githubusercontent.com/notoriousbdg/vrops-dashboard-rightsizing_details/master/images/Supermetric_Edit.png)
 4. Enable the Super Metric for each Policy shown in the `Enable in a Policy` stage of the wizard.
