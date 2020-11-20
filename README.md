@@ -128,6 +128,7 @@ Please open an [issue](https://github.com/notoriousbdg/vrops-dashboard-rightsizi
 * Removed Rightsize - Memory to Remove from Oversized VMs and Rightsize - vCPUs to Remove from Oversized VMs super metrics for Virtual Machine objects
 
 2020-11-20
+* Updated for vRealize Operations 8.2
 * Improved text formatting for both light and dark modes
 * Added warning for VMs with guest memory metrics not collecting
 * Added VM age
