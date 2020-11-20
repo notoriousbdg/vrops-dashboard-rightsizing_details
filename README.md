@@ -1,5 +1,5 @@
 
-# VM Rightsizing Details Dashboard for vRealize Operations 8.0, 8.1, and Cloud
+# VM Rightsizing Details Dashboard for vRealize Operations 8.2, and Cloud
 ---------
 
 Use this [vRealize Operations](https://www.vmware.com/products/vrealize-operations.html) dashboard to expore rightsizing recommendations.  This dashboard will help answer these questions.  
@@ -44,18 +44,24 @@ More detailed description of Rightsizing with vRealize Operations is available [
 ## Views
 | View Name | Name on Dashboard | View Type |
 |--|--|--|
-| Rightsizing - Conservative | Rightsizing - Conservative | Image |
-| Rightsizing - Aggressive | Rightsizing - Aggressive | Image |
-| Undersized Virtual Machine Details | 2A. Select an Undersized VM | List |
-| Oversized Virtual Machine Details | 2B. Select an Oversized VM | List |
-| Recommended Size - CPU | 3. Compare CPU Recommended Size to Historical Utilization | Trend |
-| Recommended Size - Memory | 4. Compare Memory Recommended Size to Historical Utilization | Trend |
-| CPU Queue Trend with Total Capacity | 5. Compare CPU Queue to Total Capacity | Trend |
-| CPU Context Switch Rate per Second with Total Capacity | 6. Compare Context Switch Rate to Total Capacity | Trend |
-| Guest Memory Paging | 7. Check for Guest Memory Paging | Trend |
-| Rightsizing 90th Percentile (24 Hour) | 90th Percentile (24 Hours) | List |
-| Rightsizing 90th Percentile (7 Days) | 90th Percentile (7 Days) | List |
-| Rightsizing 90th Percentile (30 Days) | 90th Percentile (30 Days) | List |
+| Rightsizing &#124; Conservative Diagram | Rightsizing - Conservative | Image |
+| Rightsizing &#124; Aggressive Diagram | Rightsizing - Aggressive | Image |
+| Rightsizing &#124; Undersized Virtual Machine Details | Select an Undersized VM to View Recommendations | List |
+| Rightsizing &#124; Oversized Virtual Machine Details | Select an Oversized VM to View Recommendations | List |
+| Rightsizing &#124; VM Oversized and Undersized Status | Search for a VM to View Recommendations | List |
+| Rightsizing &#124; Guest Memory Not Collecting Warning | Additional Information | Text |
+| Rightsizing &#124; Recommended Size - CPU | Compare CPU Recommended Size to Historical Utilization | Trend |
+| Rightsizing &#124; Recommended Size - Memory | Compare Memory Recommended Size to Historical Utilization | Trend |
+| Rightsizing &#124; Recommended Size - Disk Space | Compare Disk Space Recommended Size to Historical Utilization | Trend |
+| Rightsizing &#124; CPU Demand (95th Percentile) | CPU Demand MHz (95th Percentile) | List |
+| Rightsizing &#124; CPU Workload (95th Percentile) | CPU Workload % (95th Percentile) | List |
+| Rightsizing &#124; Memory Utilization (95th Percentile) | Memory Utilization GB (95th Percentile) | List |
+| Rightsizing &#124; Memory Workload (95th Percentile) | Memory Workload % (95th Percentile) | List |
+| Rightsizing &#124; Guest Virtual Disks | Virtual Disks | List |
+| Rightsizing &#124; Guest Virtual Disks | Guest Filesystems | List |
+| Rightsizing &#124; CPU Queue Trend with Total Capacity | Compare CPU Queue to Total Capacity | Trend |
+| Rightsizing &#124; CPU Context Switch Rate per Second with Total Capacity | Compare Context Switch Rate to Total Capacity | Trend |
+| Rightsizing &#124; Guest Memory Paging | Check for Guest Memory Paging | Trend |
 
 ## Super Metrics
 | Object Type | Super Metric Name |
@@ -95,7 +101,9 @@ More detailed description of Rightsizing with vRealize Operations is available [
 
 ## Support
 
-This dashboard requires vRealize Operation 8.0 or 8.1 Advanced or Enterprise edition or vRealize Operations Cloud.
+This dashboard requires vRealize Operation 8.2 Advanced or Enterprise edition or vRealize Operations Cloud.
+
+A version compatible with vRealize Operations 8.0 and 8.1 is available [here](https://github.com/notoriousbdg/vrops-dashboard-rightsizing_details/tree/vrops-8.1).
 
 Please open an [issue](https://github.com/notoriousbdg/vrops-dashboard-rightsizing_details/issues) for feedback.
 
@@ -118,3 +126,11 @@ Please open an [issue](https://github.com/notoriousbdg/vrops-dashboard-rightsizi
 2020-05-13
 * Update readme
 * Removed Rightsize - Memory to Remove from Oversized VMs and Rightsize - vCPUs to Remove from Oversized VMs super metrics for Virtual Machine objects
+
+2020-12-20
+* Improved text formatting for both light and dark modes
+* Added warning for VMs with guest memory metrics not collecting
+* Added VM age
+* Added disk space recommendations, list of virtual disks, and list of guest file systems
+* Improved percentile format covering CPU demand, CPU workload, memory utilizaiton, and memory workload
+* A version compatible with vRealize Operations 8.0 and 8.1 was moved [here](https://github.com/notoriousbdg/vrops-dashboard-rightsizing_details/tree/vrops-8.1).
